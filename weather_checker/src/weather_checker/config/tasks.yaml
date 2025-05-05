@@ -1,0 +1,18 @@
+lookup_current_weather:
+  description: >
+    Query the weather API for today's weather in the user's city. Make sure you've specified the correct city, region, and
+    country to disambiguate from any cities with the same name.
+  expected_output: >
+    A complete weather report for the user's city, specifically including information that might be relavant for someone planning
+    attire, equipment (e.g., umbrella, snow shovel), and activiites. The audience for this report is the personal assistant for the user.
+  agent: weather_reporter
+  output_file: output/weather_report.md
+
+write_morning_update:
+  description: >
+    Review today's weather report and write a morning update which will help the user prepare for the day, specifically
+    with regards to attire and events. Keep this update as short and concise as possible. Provide specific advice and
+    avoid including facts unless absolutely necessary.
+  expected_output: >
+    A text message which greets the user in the morning and provides them the necessary information to get ready for their day.
+  agent: personal_assistant

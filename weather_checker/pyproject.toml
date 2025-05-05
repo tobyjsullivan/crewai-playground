@@ -1,0 +1,28 @@
+[project]
+name = "weather_checker"
+version = "0.1.0"
+description = "weather-checker using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.118.0,<1.0.0",
+    "numpy>=2.2.5",
+    "openmeteo-requests>=1.4.0",
+    "pandas>=2.2.3",
+    "requests-cache>=1.2.1",
+    "retry-requests>=2.0.0",
+]
+
+[project.scripts]
+weather_checker = "weather_checker.main:run"
+run_crew = "weather_checker.main:run"
+train = "weather_checker.main:train"
+replay = "weather_checker.main:replay"
+test = "weather_checker.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

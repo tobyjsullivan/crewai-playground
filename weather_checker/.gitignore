@@ -1,0 +1,7 @@
+.env
+__pycache__/
+.DS_Store
+.cache.sqlite
+
+# Generated output
+/output
