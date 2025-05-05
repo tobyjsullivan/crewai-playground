@@ -38,7 +38,7 @@ class WeatherForcastTool(BaseTool):
             "hourly": ["temperature_2m", "weather_code", "relative_humidity_2m", "dew_point_2m", "apparent_temperature", "precipitation_probability", "rain", "precipitation", "showers", "snowfall", "surface_pressure", "pressure_msl", "visibility", "temperature_80m", "temperature_120m", "temperature_180m", "snow_depth"],
             "current": ["temperature_2m", "relative_humidity_2m", "is_day", "apparent_temperature", "precipitation", "rain", "showers", "snowfall", "weather_code", "cloud_cover", "pressure_msl", "surface_pressure", "wind_speed_10m", "wind_direction_10m", "wind_gusts_10m"],
             "timezone": "America/Los_Angeles",
-            "forecast_days": 3
+            "forecast_days": 1
         }
         responses = openmeteo.weather_api(url, params=params)
 
