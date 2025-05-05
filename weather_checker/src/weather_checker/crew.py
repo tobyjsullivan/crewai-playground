@@ -40,16 +40,19 @@ class WeatherChecker():
     def personal_assistant(self) -> Agent:
         return Agent(
             config=self.agents_config['personal_assistant'], # type: ignore[index]
-            allow_delegation=True,
-            verbose=True
+            # llm="gpt-4o-2024-08-06",
+            llm="gpt-4.1-2025-04-14",
+            # allow_delegation=True,
+            verbose=True,
         )
 
     @agent
     def weather_reporter(self) -> Agent:
         return Agent(
             config=self.agents_config['weather_reporter'], # type: ignore[index]
+            llm="gpt-4o-mini-2024-07-18",
+            tools=[weather_forcast_tool],
             verbose=True,
-            tools=[weather_forcast_tool]
         )
 
     # To learn more about structured task outputs,
