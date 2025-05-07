@@ -11,6 +11,7 @@ dependencies = [
     "pandas>=2.2.3",
     "requests-cache>=1.2.1",
     "retry-requests>=2.0.0",
+    "twilio>=9.6.0",
 ]
 
 [project.scripts]
