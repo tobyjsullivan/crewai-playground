@@ -10,9 +10,10 @@ lookup_current_weather:
 
 write_morning_update:
   description: >
-    Review today's weather report and write a morning update which will help the user prepare for the day, specifically
-    with regards to attire and events. Keep this update as short and concise as possible. Provide specific advice and
-    avoid including facts unless absolutely necessary.
+    Send the user a morning update which will help them prepare for the day. Specifically consider today's weather
+    report as well as any other information you have which might be relevant. Make specific recommendations with regards
+    to attire and events. Keep this update as short and concise as possible. Provide specific advice and
+    avoid including facts except where necessary.
   expected_output: >
-    A text message which greets the user in the morning and provides them the necessary information to get ready for their day.
+    Send a text message which greets the user in the morning and provides them the necessary information to get ready for their day.
   agent: personal_assistant

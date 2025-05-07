@@ -4,9 +4,19 @@ from crewai.project import CrewBase, agent, crew, task, before_kickoff
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 from typing import List
-from .tools.custom_tool import WeatherForcastTool
+
+from .tools.sms_tool import SendSmsToContact
+from .tools.weather_tool import WeatherForcastTool
+
 
 weather_forcast_tool = WeatherForcastTool()
+
+# Initialize SMS tool for Toby
+sms_toby_tool = SendSmsToContact(
+    from_number=os.environ.get('TWILIO_FROM_NUMBER', '+1234567890'),  # Replace with your Twilio number
+    to_number=os.environ.get('TWILIO_TO_NUMBER', '+1987654321'),      # Replace with your number
+    contact_name="Toby"
+)
 
 user_preference = TextFileKnowledgeSource(
     file_paths=['user_preference.txt'],
@@ -43,6 +53,7 @@ class WeatherChecker():
             # llm="gpt-4o-2024-08-06",
             llm="gpt-4.1-2025-04-14",
             # allow_delegation=True,
+            tools=[sms_toby_tool],
             verbose=True,
         )
 
